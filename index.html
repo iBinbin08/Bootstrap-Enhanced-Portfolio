@@ -11,42 +11,61 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main JS -->
+  <script>
+    var navLinks = document.getElementsByClassName("nav-links");
+    var navContents = document.getElementsByClassName("nav-contents");
+    function showContent(navName){
+      for(navLink of navLinks){
+        navLink.classList.remove("active-link");
+      }
+      for(navContent of navContents){
+        navContent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(navName).classList.add("active-tab");
+    }
+  </script>
 </head>
 
 <body>
-
-
 <!-- Navbar -->
-<nav class=" fixed-top navbar navbar-expand-sm navbar-light bg-dark">
+<nav class="fixed-top navbar navbar-expand-sm navbar-light bg-dark">
   <div class="container-fluid ">
-    <a class="navbar-brand text-light" href="#">Binbin</a>
+    <a class="navbar-brand text-light" href="#" onclick="showContent('header')">Binbin</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav ">
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#header">Home</a>
+      <ul class="navbar-nav">
+        <li class="nav-item active-link" onclick="showContent('header')">
+          <a class="nav-link text-white" aria-current="page">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#about">About</a>
+        <li class="nav-item nav-links active-link" onclick="showContent('about')">
+          <a class="nav-link text-white">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#resume">Resume</a>
+        <li class="nav-item nav-links active-link" onclick="showContent('resume')">
+          <a class="nav-link text-white">Resume</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-links active-link">
           <a class="nav-contact nav-link text-white" data-bs-toggle="modal" data-bs-target="#contact">Contact</a>
         </li>
       </ul>		  
     </div>
+
+    <div>
+
+    </div>
+
   </div>
 </nav>
 <!-- End of Navbar -->
 
 <!-- Home Section -->
-<header id="header">
+<header class="nav-contents active-tab" id="header">
   <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-    <div class="text-white">
+    <div class="text-white header-content">
       <h1>Engr. Emeroe Ven Basyl M. Neñeria</h1>
       <p>Licensed Electronics Engineer | Virtual Assistant | Aspiring Full Stack Developer</p>
     </div>
@@ -63,10 +82,10 @@
 
 
 <!-- About Section -->
-<section id="about" class="about">
+<section id="about" class="nav-contents about">
 
 <!-- About Me -->
-<div class="about-me container">
+<div class="about-me text-white container">
 
   <div class="section-title">
     <h2>About</h2>
@@ -121,7 +140,7 @@
             <td>Investing</td>
           </tr>
           <tr>
-            <td>Keen on details</td>
+            <td>Keen to details</td>
             <td>Playing Basketball</td>
             <td>Programming</td>
           </tr>
@@ -169,8 +188,8 @@
 <!-- End of About -->
 
 <!-- ======= Resume Section ======= -->
-<section id="resume" class="resume">
-  <div class="container">
+<section id="resume" class="nav-contents">
+  <div class="text-white resume container">
 
     <div class="section-title">
       <h2>Resume</h2>
