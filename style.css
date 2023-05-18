@@ -5,7 +5,7 @@
 }
 
 body {
-    /* background-color: #040404; */
+    background-color: #040404;
     color: #fff;
     position: relative;
     background: transparent;
@@ -20,7 +20,20 @@ body::before {
     top: 0;
     height: 100vh;
     z-index: -1;
+    background-position: center;
 }
+
+/* @media screen (max-width: 768px) {
+  body::before {
+    width: 100px;
+  }
+} */
+
+/* @media (min-width: 1024px) {
+  body::before {
+    background-attachment: fixed;
+  }
+} */
 
 /* Header / Home */
 #header .social-links {
@@ -62,21 +75,6 @@ body::before {
     display: block;
   }
 
-  /* .active-link {
-    background-color: green
-  } */
-
-  /* .active-link::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #5c2221;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
-} */
-
 
   nav li:hover {
     background-color: #aaaaaa;
@@ -102,6 +100,11 @@ body::before {
   .about-me, .resume{
     background-color: rgba(0, 0, 0, 0.9);
     padding: 30px;
+  }
+
+  .about-me ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
   }
 
   /* Resume */
